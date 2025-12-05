@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap');
+
+:root {
+  --color-electric-blue: #3A6FF8;
+  --color-cyber-purple: #6A4BFF;
+  --color-neon-aqua: #2EE7E0;
+  --color-nano-green: #37FF8B;
+  --color-bg-dark: #020617;
+  --color-bg-darker: #050816;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #94a3b8;
+}
+
+body {
+  font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  background: var(--color-bg-darker);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
