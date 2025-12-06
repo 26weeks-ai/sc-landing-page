@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 interface TypingAnimationProps {
   words: string[];
   className?: string;
+  gradientColors?: { from: string; via?: string; to: string };
 }
 
-export function TypingAnimation({ words, className = '' }: TypingAnimationProps) {
+export function TypingAnimation({ words, className = '', gradientColors }: TypingAnimationProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -51,11 +52,27 @@ export function TypingAnimation({ words, className = '' }: TypingAnimationProps)
     return () => clearInterval(cursorInterval);
   }, []);
 
+  const gradientStyle = gradientColors 
+    ? {
+        background: gradientColors.via 
+          ? `linear-gradient(90deg, ${gradientColors.from}, ${gradientColors.via}, ${gradientColors.to})`
+          : `linear-gradient(90deg, ${gradientColors.from}, ${gradientColors.to})`,
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+      }
+    : {};
+
   return (
-    <span className={className}>
+    <span className={className} style={gradientStyle}>
       {currentText}
-      <span className={`inline-block w-0.5 h-[1em] ml-1 align-middle ${showCursor ? 'bg-cyan-400' : 'bg-transparent'}`} 
-            style={{ transform: 'translateY(-0.1em)' }} />
+      <span 
+        className="inline-block w-0.5 h-[1em] ml-1 align-middle" 
+        style={{ 
+          transform: 'translateY(-0.1em)',
+          background: showCursor ? (gradientColors?.from || '#22D3EE') : 'transparent',
+        }} 
+      />
     </span>
   );
 }

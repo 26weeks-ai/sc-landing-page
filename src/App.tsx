@@ -1,43 +1,99 @@
 import { NetworkBackground } from './components/NetworkBackground';
 import { DashboardMock } from './components/DashboardMock';
+import { TypingAnimation } from './components/TypingAnimation';
 import { Logo } from './components/Logo';
-import { Sparkles, Shield, Activity, Globe, Target, Zap, TrendingUp } from 'lucide-react';
+import { colors, secondaryGradient, cardBackground, cardBorder } from './styles/colors';
+import { 
+  MessageCircle,
+  Brain,
+  Shield,
+  Users,
+  Target,
+  Settings,
+  FileText,
+  Zap,
+  Check,
+  TrendingUp,
+} from 'lucide-react';
 
 export default function App() {
+  const platforms = ['Facebook', 'Reddit', 'Instagram', 'LinkedIn', 'Internet'];
+
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom, #020617, #050816)' }}>
+    <div className="min-h-screen" style={{ background: colors.backgroundMain }}>
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-slate-800/50" style={{ background: 'rgba(2, 6, 23, 0.8)' }}>
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b"
+        style={{ 
+          background: colors.navBackground,
+          borderColor: 'rgba(148, 163, 184, 0.1)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Logo />
-          <div className="flex items-center gap-6">
-            <button className="text-slate-300 hover:text-white transition-colors">
+          
+          <div className="hidden lg:flex items-center gap-6">
+            <button 
+              className="transition-colors"
+              style={{ color: colors.textSecondary }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.textPrimary}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+            >
               Features
             </button>
-            <button className="text-slate-300 hover:text-white transition-colors">
+            <button 
+              className="transition-colors"
+              style={{ color: colors.textSecondary }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.textPrimary}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+            >
+              How it works
+            </button>
+            <button 
+              className="transition-colors"
+              style={{ color: colors.textSecondary }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.textPrimary}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+            >
+              Impact
+            </button>
+            <button 
+              className="transition-colors"
+              style={{ color: colors.textSecondary }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.textPrimary}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+            >
               Pricing
             </button>
-            <button className="text-slate-300 hover:text-white transition-colors">
-              About
-            </button>
-            <button className="text-slate-300 hover:text-white transition-colors">
+            <button 
+              className="transition-colors"
+              style={{ color: colors.textSecondary }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.textPrimary}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+            >
               Login
             </button>
             <button 
-              className="px-6 py-2 rounded-lg transition-all"
+              className="px-6 py-2 rounded-full transition-all"
               style={{ 
-                background: 'linear-gradient(135deg, #3A6FF8, #6A4BFF)',
-                boxShadow: '0 4px 20px rgba(58, 111, 248, 0.3)',
+                background: secondaryGradient,
+                color: colors.textPrimary,
+                boxShadow: `0 4px 20px ${colors.secondaryGradientFrom}30`,
               }}
             >
-              Get Started
+              Get started
             </button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section 
+        className="relative pt-32 pb-20 px-6 overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, ${colors.backgroundHeroGradientFrom}, ${colors.backgroundHeroGradientTo})`,
+        }}
+      >
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Large blurred ellipses */}
@@ -46,7 +102,7 @@ export default function App() {
             style={{
               width: '500px',
               height: '500px',
-              background: 'radial-gradient(circle, rgba(58, 111, 248, 0.15), transparent)',
+              background: `radial-gradient(circle, ${colors.brandGradientFrom}20, transparent)`,
             }}
           ></div>
           <div 
@@ -54,15 +110,7 @@ export default function App() {
             style={{
               width: '600px',
               height: '600px',
-              background: 'radial-gradient(circle, rgba(106, 75, 255, 0.12), transparent)',
-            }}
-          ></div>
-          <div 
-            className="absolute bottom-20 left-1/2 rounded-full blur-3xl"
-            style={{
-              width: '400px',
-              height: '400px',
-              background: 'radial-gradient(circle, rgba(46, 231, 224, 0.08), transparent)',
+              background: `radial-gradient(circle, ${colors.brandGradientTo}15, transparent)`,
             }}
           ></div>
           
@@ -74,48 +122,55 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT: Hero Copy */}
             <div>
-              <div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-                style={{ 
-                  background: 'rgba(58, 111, 248, 0.1)',
-                  border: '1px solid rgba(58, 111, 248, 0.2)',
-                }}
-              >
-                <span style={{ fontSize: '0.875rem' }}>✨</span>
-                <span className="text-slate-300" style={{ fontSize: '0.875rem' }}>Powered by Advanced AI Agents</span>
-              </div>
-              
-              <h1 className="mb-6 text-white">
-                AI agents that grow your brand across social media.
+              <h1 className="mb-6" style={{ color: colors.textPrimary }}>
+                <span className="block">Create targeted </span>
+                <span className="block" style={{ fontWeight: 800 }}>attention </span>
+                <span className="block">for your brand across </span>
+                <TypingAnimation 
+                  words={platforms}
+                  gradientColors={{
+                    from: colors.brandGradientFrom,
+                    via: colors.brandGradientVia,
+                    to: colors.brandGradientTo,
+                  }}
+                />
               </h1>
               
-              <p className="mb-8 text-slate-400" style={{ fontSize: '1.125rem', lineHeight: '1.8' }}>
-                Deploy always-on AI brand ambassadors across Facebook, Instagram, Reddit and LinkedIn. 
-                They join conversations, answer questions and drive awareness—without relying on clicks.
+              <p 
+                className="mb-8"
+                style={{ 
+                  color: colors.textSecondary,
+                  fontSize: '1.125rem',
+                  lineHeight: '1.8',
+                }}
+              >
+                Our autonomous AI brand ambassadors join live conversations, answer questions, and grow awareness—without relying on clicks
               </p>
               
               <div className="flex items-center gap-4 mb-6 flex-wrap">
                 <button 
-                  className="px-8 py-4 rounded-lg transition-all"
+                  className="px-8 py-4 rounded-full transition-all"
                   style={{ 
-                    background: 'linear-gradient(135deg, #3A6FF8, #6A4BFF)',
-                    boxShadow: '0 8px 30px rgba(58, 111, 248, 0.4)',
+                    background: secondaryGradient,
+                    color: colors.textPrimary,
+                    boxShadow: `0 8px 30px ${colors.secondaryGradientFrom}40`,
                   }}
                 >
-                  Start Your Campaign
+                  Get started
                 </button>
                 <button 
-                  className="px-8 py-4 rounded-lg transition-all"
+                  className="px-8 py-4 rounded-full transition-all"
                   style={{ 
-                    border: '1px solid rgba(148, 163, 184, 0.3)',
-                    background: 'rgba(15, 23, 42, 0.5)',
+                    border: `1px solid ${cardBorder}`,
+                    background: cardBackground,
+                    color: colors.textPrimary,
                   }}
                 >
-                  Watch Demo
+                  Book demo
                 </button>
               </div>
               
-              <p className="text-slate-500" style={{ fontSize: '0.875rem' }}>
+              <p style={{ color: colors.textSecondary, fontSize: '0.875rem' }}>
                 No credit card required · Get started in minutes
               </p>
             </div>
@@ -128,271 +183,698 @@ export default function App() {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="relative py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center gap-12 flex-wrap text-slate-400">
-            <div className="flex items-center gap-3">
-              <div 
-                className="p-2 rounded-lg"
-                style={{ background: 'rgba(58, 111, 248, 0.1)' }}
-              >
-                <Shield className="w-5 h-5" style={{ color: '#3A6FF8' }} />
-              </div>
-              <span style={{ fontSize: '0.95rem' }}>Enterprise-grade security</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div 
-                className="p-2 rounded-lg"
-                style={{ background: 'rgba(106, 75, 255, 0.1)' }}
-              >
-                <Activity className="w-5 h-5" style={{ color: '#6A4BFF' }} />
-              </div>
-              <span style={{ fontSize: '0.95rem' }}>500+ Active Campaigns</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div 
-                className="p-2 rounded-lg"
-                style={{ background: 'rgba(46, 231, 224, 0.1)' }}
-              >
-                <Globe className="w-5 h-5" style={{ color: '#2EE7E0' }} />
-              </div>
-              <span style={{ fontSize: '0.95rem' }}>50M+ Impressions Daily</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 
-              className="mb-4"
-              style={{ 
-                background: 'linear-gradient(90deg, #3A6FF8, #6A4BFF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              Why Choose SleeperCells.ai
+            <h2 className="mb-4" style={{ color: colors.textPrimary }}>
+              Features
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Revolutionary AI-powered brand ambassadors that deliver results without interrupting your audience
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div 
-              className="p-8 rounded-2xl border transition-all group"
+              className="p-8 rounded-2xl border transition-all"
               style={{ 
-                background: 'rgba(15, 23, 42, 0.5)',
-                borderColor: 'rgba(148, 163, 184, 0.1)',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'linear-gradient(135deg, #3A6FF8, #2EE7E0)' }}
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientVia})`,
+                }}
               >
-                <Target className="w-6 h-6 text-white" />
+                <MessageCircle className="w-6 h-6" style={{ color: colors.textPrimary }} />
               </div>
-              <h3 className="mb-3 text-white">AI-Powered Targeting</h3>
-              <p className="text-slate-400">
-                Our advanced AI algorithms identify and engage your ideal audience across multiple platforms simultaneously.
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                On-demand UGC generation
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Get the authenticity of user-generated content with the control and targeting of a paid service.
               </p>
             </div>
 
             {/* Feature 2 */}
             <div 
-              className="p-8 rounded-2xl border transition-all group"
+              className="p-8 rounded-2xl border transition-all"
               style={{ 
-                background: 'rgba(15, 23, 42, 0.5)',
-                borderColor: 'rgba(148, 163, 184, 0.1)',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'linear-gradient(135deg, #6A4BFF, #3A6FF8)' }}
+                style={{ 
+                  background: secondaryGradient,
+                }}
               >
-                <Zap className="w-6 h-6 text-white" />
+                <Shield className="w-6 h-6" style={{ color: colors.textPrimary }} />
               </div>
-              <h3 className="mb-3 text-white">Zero-Click Impact</h3>
-              <p className="text-slate-400">
-                Generate brand awareness and attention without requiring users to click, reducing friction and increasing reach.
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Built-in brand guardrails
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Set boundaries on what your AI agents can say, ensuring they stay on-brand and compliant with your guidelines.
               </p>
             </div>
 
             {/* Feature 3 */}
             <div 
-              className="p-8 rounded-2xl border transition-all group"
+              className="p-8 rounded-2xl border transition-all"
               style={{ 
-                background: 'rgba(15, 23, 42, 0.5)',
-                borderColor: 'rgba(148, 163, 184, 0.1)',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'linear-gradient(135deg, #2EE7E0, #6A4BFF)' }}
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
+                }}
               >
-                <TrendingUp className="w-6 h-6 text-white" />
+                <Users className="w-6 h-6" style={{ color: colors.textPrimary }} />
               </div>
-              <h3 className="mb-3 text-white">Real-Time Analytics</h3>
-              <p className="text-slate-400">
-                Track impressions, engagement, and brand lift with comprehensive analytics dashboards and insights.
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Optional human review
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Optional approval workflows let you review and approve content before it goes live in communities.
               </p>
             </div>
 
             {/* Feature 4 */}
             <div 
-              className="p-8 rounded-2xl border transition-all group"
+              className="p-8 rounded-2xl border transition-all"
               style={{ 
-                background: 'rgba(15, 23, 42, 0.5)',
-                borderColor: 'rgba(148, 163, 184, 0.1)',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'linear-gradient(135deg, #3A6FF8, #6A4BFF)' }}
+                style={{ 
+                  background: secondaryGradient,
+                }}
               >
-                <Globe className="w-6 h-6 text-white" />
+                <Zap className="w-6 h-6" style={{ color: colors.textPrimary }} />
               </div>
-              <h3 className="mb-3 text-white">Multi-Platform Reach</h3>
-              <p className="text-slate-400">
-                Deploy campaigns across Reddit, Instagram, Facebook, LinkedIn, and beyond from a single interface.
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Designed for every platform
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Start with Reddit today. Expand to Instagram, Facebook, LinkedIn and more as we roll out new integrations.
               </p>
             </div>
 
             {/* Feature 5 */}
             <div 
-              className="p-8 rounded-2xl border transition-all group"
+              className="p-8 rounded-2xl border transition-all"
               style={{ 
-                background: 'rgba(15, 23, 42, 0.5)',
-                borderColor: 'rgba(148, 163, 184, 0.1)',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'linear-gradient(135deg, #6A4BFF, #2EE7E0)' }}
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientTo})`,
+                }}
               >
-                <Sparkles className="w-6 h-6 text-white" />
+                <Target className="w-6 h-6" style={{ color: colors.textPrimary }} />
               </div>
-              <h3 className="mb-3 text-white">Smart Automation</h3>
-              <p className="text-slate-400">
-                Set it and forget it. Our AI continuously optimizes your campaigns for maximum attention and engagement.
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Autonomous from day one
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Once set up, our agents run autonomously. You just review summaries and watch attention grow.
               </p>
             </div>
 
             {/* Feature 6 */}
             <div 
-              className="p-8 rounded-2xl border transition-all group"
+              className="p-8 rounded-2xl border transition-all"
               style={{ 
-                background: 'rgba(15, 23, 42, 0.5)',
-                borderColor: 'rgba(148, 163, 184, 0.1)',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'linear-gradient(135deg, #2EE7E0, #3A6FF8)' }}
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
+                }}
               >
-                <Shield className="w-6 h-6 text-white" />
+                <Brain className="w-6 h-6" style={{ color: colors.textPrimary }} />
               </div>
-              <h3 className="mb-3 text-white">Enterprise Security</h3>
-              <p className="text-slate-400">
-                Bank-level encryption and compliance with industry standards ensure your campaigns and data stay secure.
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Context-aware AI
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Our AI agents use your website, docs and guardrails to talk like someone who actually knows your product.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* How It Works Section */}
       <section className="py-20 px-6 relative">
-        <div 
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(58, 111, 248, 0.05), rgba(106, 75, 255, 0.05))' }}
-        ></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="mb-6 text-white">
-            Ready to Transform Your
-            <br />
-            <span 
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="mb-4" style={{ color: colors.textPrimary }}>
+              How it works
+            </h2>
+            <p 
+              className="max-w-2xl mx-auto"
+              style={{ color: colors.textSecondary, fontSize: '1.125rem' }}
+            >
+              From zero to always-on attention in a few simple steps.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="text-center">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{ 
+                  background: secondaryGradient,
+                }}
+              >
+                <Target className="w-8 h-8" style={{ color: colors.textPrimary }} />
+              </div>
+              <h3 
+                className="mb-3"
+                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+              >
+                Tell us about your product
+              </h3>
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                You give us your website, key messaging and guardrails. Sleepercells learns how to talk about your product.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientVia})`,
+                }}
+              >
+                <Settings className="w-8 h-8" style={{ color: colors.textPrimary }} />
+              </div>
+              <h3 
+                className="mb-3"
+                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+              >
+                Choose where attention should grow
+              </h3>
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                Pick the platforms and communities you care about most—for example, specific subreddits or audience segments.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
+                }}
+              >
+                <Users className="w-8 h-8" style={{ color: colors.textPrimary }} />
+              </div>
+              <h3 
+                className="mb-3"
+                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+              >
+                We activate autonomous brand agents
+              </h3>
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                Our AI-assisted agents start joining relevant conversations, answering questions and mentioning your product where it fits naturally.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="text-center">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{ 
+                  background: secondaryGradient,
+                }}
+              >
+                <FileText className="w-8 h-8" style={{ color: colors.textPrimary }} />
+              </div>
+              <h3 
+                className="mb-3"
+                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+              >
+                Get simple, transparent summaries
+              </h3>
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                We send you lightweight summaries with examples of where your brand showed up and how people responded.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="mb-4" style={{ color: colors.textPrimary }}>
+              Impact
+            </h2>
+            <p 
+              className="max-w-2xl mx-auto"
+              style={{ color: colors.textSecondary, fontSize: '1.125rem' }}
+            >
+              What happens when your product is being talked about every day, in the right places.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Impact Card 1 */}
+            <div 
+              className="p-8 rounded-2xl border"
               style={{ 
-                background: 'linear-gradient(90deg, #2EE7E0, #6A4BFF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                background: cardBackground,
+                borderColor: cardBorder,
               }}
             >
-              Brand Awareness Strategy?
-            </span>
-          </h2>
-          <p className="mb-8 text-slate-400">
-            Join hundreds of brands already using SleeperCells.ai to capture attention at scale
-          </p>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientFrom}40, ${colors.brandGradientVia}40)`,
+                }}
+              >
+                <MessageCircle className="w-6 h-6" style={{ color: colors.brandGradientFrom }} />
+              </div>
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Your brand enters real conversations
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                We seed user-style posts, replies and Q&As in relevant communities, so your product shows up where your buyers already hang out.
+              </p>
+            </div>
+
+            {/* Impact Card 2 */}
+            <div 
+              className="p-8 rounded-2xl border"
+              style={{ 
+                background: cardBackground,
+                borderColor: cardBorder,
+              }}
+            >
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                style={{ 
+                  background: `${colors.secondaryGradientFrom}40`,
+                }}
+              >
+                <Brain className="w-6 h-6" style={{ color: colors.secondaryGradientFrom }} />
+              </div>
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Every mention is on-brand
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Our AI agents use your website, docs and guardrails to talk like someone who actually knows your product.
+              </p>
+            </div>
+
+            {/* Impact Card 3 */}
+            <div 
+              className="p-8 rounded-2xl border"
+              style={{ 
+                background: cardBackground,
+                borderColor: cardBorder,
+              }}
+            >
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                style={{ 
+                  background: `${colors.brandGradientTo}40`,
+                }}
+              >
+                <TrendingUp className="w-6 h-6" style={{ color: colors.brandGradientTo }} />
+              </div>
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Attention grows steadily over time
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                Instead of a single ad blast, sleepercells keeps a steady stream of conversations going over weeks and months.
+              </p>
+            </div>
+
+            {/* Impact Card 4 */}
+            <div 
+              className="p-8 rounded-2xl border"
+              style={{ 
+                background: cardBackground,
+                borderColor: cardBorder,
+              }}
+            >
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                style={{ 
+                  background: `${colors.brandGradientVia}40`,
+                }}
+              >
+                <FileText className="w-6 h-6" style={{ color: colors.brandGradientVia }} />
+              </div>
+              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                Clear visibility into what&apos;s happening
+              </h3>
+              <p style={{ color: colors.textSecondary }}>
+                See which threads and communities mentioned your brand, and what people are saying—without obsessing over click-through rates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="mb-4" style={{ color: colors.textPrimary }}>
+              Pricing
+            </h2>
+            <p 
+              className="max-w-2xl mx-auto"
+              style={{ color: colors.textSecondary, fontSize: '1.125rem' }}
+            >
+              Start with focused Reddit attention. Expand to other platforms over time.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Plan 1: Reddit Starter */}
+            <div 
+              className="p-8 rounded-2xl border"
+              style={{ 
+                background: cardBackground,
+                borderColor: cardBorder,
+              }}
+            >
+              <h3 
+                className="mb-2"
+                style={{ color: colors.textPrimary, fontSize: '1.5rem' }}
+              >
+                Reddit starter
+              </h3>
+              <div className="mb-6">
+                <span style={{ color: colors.textPrimary, fontSize: '2.5rem', fontWeight: 700 }}>
+                  $199
+                </span>
+                <span style={{ color: colors.textSecondary }}> / month</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: colors.brandGradientFrom }} />
+                  <span style={{ color: colors.textSecondary }}>
+                    Up to 5 focused subreddits
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: colors.brandGradientFrom }} />
+                  <span style={{ color: colors.textSecondary }}>
+                    Up to 5 active attention agents
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: colors.brandGradientFrom }} />
+                  <span style={{ color: colors.textSecondary }}>
+                    Lightweight weekly highlights of key conversations
+                  </span>
+                </li>
+              </ul>
+              <button 
+                className="w-full px-6 py-3 rounded-full transition-all"
+                style={{ 
+                  background: secondaryGradient,
+                  color: colors.textPrimary,
+                }}
+              >
+                Get started
+              </button>
+            </div>
+
+            {/* Plan 2: Reddit Plus (Recommended) */}
+            <div 
+              className="p-8 rounded-2xl border relative"
+              style={{ 
+                background: `${cardBackground}dd`,
+                borderColor: colors.secondaryGradientFrom,
+                boxShadow: `0 0 40px ${colors.secondaryGradientFrom}20`,
+              }}
+            >
+              <div 
+                className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full uppercase"
+                style={{ 
+                  background: secondaryGradient,
+                  color: colors.textPrimary,
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.05em',
+                }}
+              >
+                recommended
+              </div>
+              <h3 
+                className="mb-2"
+                style={{ color: colors.textPrimary, fontSize: '1.5rem' }}
+              >
+                Reddit plus
+              </h3>
+              <div className="mb-6">
+                <span style={{ color: colors.textPrimary, fontSize: '2.5rem', fontWeight: 700 }}>
+                  $299
+                </span>
+                <span style={{ color: colors.textSecondary }}> / month</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: colors.brandGradientFrom }} />
+                  <span style={{ color: colors.textSecondary }}>
+                    Up to 10 focused subreddits
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: colors.brandGradientFrom }} />
+                  <span style={{ color: colors.textSecondary }}>
+                    Up to 5 active attention agents
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: colors.brandGradientFrom }} />
+                  <span style={{ color: colors.textSecondary }}>
+                    Higher conversation volume and faster iteration
+                  </span>
+                </li>
+              </ul>
+              <button 
+                className="w-full px-6 py-3 rounded-full transition-all"
+                style={{ 
+                  background: secondaryGradient,
+                  color: colors.textPrimary,
+                }}
+              >
+                Get started
+              </button>
+            </div>
+
+            {/* Plan 3: Multi-Platform (Coming Soon) */}
+            <div 
+              className="p-8 rounded-2xl border"
+              style={{ 
+                background: cardBackground,
+                borderColor: cardBorder,
+              }}
+            >
+              <div 
+                className="inline-block px-3 py-1 rounded-full uppercase mb-4"
+                style={{ 
+                  background: `${colors.brandGradientVia}20`,
+                  color: colors.brandGradientVia,
+                  border: `1px solid ${colors.brandGradientVia}40`,
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.05em',
+                }}
+              >
+                coming soon
+              </div>
+              <h3 
+                className="mb-4"
+                style={{ color: colors.textPrimary, fontSize: '1.5rem' }}
+              >
+                Multi-platform attention
+              </h3>
+              <p className="mb-4" style={{ color: colors.textSecondary }}>
+                Support for Instagram, Facebook, LinkedIn and more.
+              </p>
+              <p className="mb-8" style={{ color: colors.textSecondary }}>
+                Talk to us if you want early access.
+              </p>
+              <button 
+                className="w-full px-6 py-3 rounded-full transition-all"
+                style={{ 
+                  border: `1px solid ${cardBorder}`,
+                  color: colors.textPrimary,
+                  background: 'transparent',
+                }}
+              >
+                Book demo
+              </button>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
             <button 
-              className="px-8 py-4 rounded-lg transition-all"
-              style={{ 
-                background: 'linear-gradient(135deg, #3A6FF8, #6A4BFF)',
-                boxShadow: '0 8px 30px rgba(58, 111, 248, 0.4)',
-              }}
+              className="transition-colors"
+              style={{ color: colors.textSecondary }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
             >
-              Get Started Free
-            </button>
-            <button 
-              className="px-8 py-4 rounded-lg transition-all"
-              style={{ 
-                border: '1px solid rgba(148, 163, 184, 0.3)',
-                background: 'rgba(15, 23, 42, 0.5)',
-              }}
-            >
-              Schedule a Demo
+              Book demo for custom needs →
             </button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-12 px-6" style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}>
+      <footer 
+        className="border-t py-12 px-6"
+        style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
+            {/* Column 1: Brand */}
             <div>
               <div className="mb-4">
-                <Logo variant="footer" />
+                <Logo size="small" />
               </div>
-              <p className="text-slate-400">
-                AI-powered brand ambassadors for modern enterprises.
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                AI-powered attention engine for modern brands.
               </p>
             </div>
+            
+            {/* Column 2: Product */}
             <div>
-              <h3 className="mb-4 text-white">Product</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Case Studies</a></li>
+              <h3 
+                className="mb-4"
+                style={{ color: colors.textPrimary, fontSize: '0.95rem' }}
+              >
+                Product
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="#"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    Pricing
+                  </a>
+                </li>
               </ul>
             </div>
+            
+            {/* Column 3: Company */}
             <div>
-              <h3 className="mb-4 text-white">Company</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Careers</a></li>
+              <h3 
+                className="mb-4"
+                style={{ color: colors.textPrimary, fontSize: '0.95rem' }}
+              >
+                Company
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="#"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    About
+                  </a>
+                </li>
               </ul>
             </div>
+            
+            {/* Column 4: Legal */}
             <div>
-              <h3 className="mb-4 text-white">Legal</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Terms</a></li>
-                <li><a href="#" className="hover:text-[#2EE7E0] transition-colors">Security</a></li>
+              <h3 
+                className="mb-4"
+                style={{ color: colors.textPrimary, fontSize: '0.95rem' }}
+              >
+                Legal
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="#"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    Terms
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    Security
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t text-center text-slate-400" style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}>
-            <p>&copy; 2025 SleeperCells.ai. All rights reserved.</p>
+          
+          <div 
+            className="pt-8 border-t text-center"
+            style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}
+          >
+            <p style={{ color: colors.textSecondary, fontSize: '0.875rem' }}>
+              &copy; 2025 sleepercells.ai. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
