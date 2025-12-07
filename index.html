@@ -1,15 +1,131 @@
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Create Landing Page</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleepercells | AI brand ambassadors that grow conversation</title>
+    <meta
+      name="description"
+      content="Sleepercells deploys autonomous AI brand ambassadors to join real conversations on Reddit, LinkedIn, and more—building awareness with on-brand replies, UGC, and summaries you can review."
+    />
+    <meta
+      name="keywords"
+      content="AI brand ambassadors, conversation marketing, Reddit marketing, community growth, user-generated content automation"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#050816" />
+    <link rel="canonical" href="https://sleepercells.ai/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sleepercells" />
+    <meta property="og:title" content="Sleepercells | AI brand ambassadors that grow conversation" />
+    <meta
+      property="og:description"
+      content="Autonomous AI brand ambassadors that seed user-style posts, on-brand replies, and community conversations for your product."
+    />
+    <meta property="og:url" content="https://sleepercells.ai/" />
+    <meta property="og:image" content="https://sleepercells.ai/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sleepercells | AI brand ambassadors that grow conversation" />
+    <meta
+      name="twitter:description"
+      content="Autonomous AI brand ambassadors that seed user-style posts, on-brand replies, and community conversations for your product."
+    />
+    <meta name="twitter:image" content="https://sleepercells.ai/og-image.png" />
+
+    <!-- Structured data for SEO + AI overviews -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://sleepercells.ai/#organization",
+            "name": "Sleepercells",
+            "url": "https://sleepercells.ai/",
+            "description": "Sleepercells deploys AI brand ambassadors to join relevant conversations and grow community-driven awareness.",
+            "logo": "https://sleepercells.ai/og-image.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://sleepercells.ai/#website",
+            "url": "https://sleepercells.ai/",
+            "name": "Sleepercells",
+            "publisher": {
+              "@id": "https://sleepercells.ai/#organization"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://sleepercells.ai/#product",
+            "name": "Sleepercells AI Attention Engine",
+            "applicationCategory": "MarketingAutomation",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "199",
+              "priceCurrency": "USD"
+            },
+            "description": "AI brand ambassadors that generate UGC-style posts, replies, and Q&As across the communities you choose.",
+            "url": "https://sleepercells.ai/",
+            "brand": {
+              "@id": "https://sleepercells.ai/#organization"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://sleepercells.ai/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do Sleepercells brand ambassadors work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sleepercells activates AI brand ambassadors that join live conversations, answer questions, and seed user-style posts in the communities you select."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which platforms do you support today?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Reddit is available now with focused subreddit coverage; Instagram, Facebook, LinkedIn, and other networks are expanding next."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you keep messaging on-brand and compliant?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You set guardrails, voice guidelines, and approval workflows. Every agent uses your source-of-truth content to stay accurate and compliant."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I review activity before or after it goes live?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can enable optional human review before posting and receive transparent summaries of where and how your brand was mentioned."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
   
