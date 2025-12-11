@@ -699,14 +699,14 @@ export default function App() {
         style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Column 1: Brand */}
             <div>
               <div className="mb-4">
                 <Logo size="small" />
               </div>
               <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
-                AI-powered attention engine for modern brands.
+                Always-on attention architecture for modern brands.
               </p>
             </div>
             
@@ -719,6 +719,17 @@ export default function App() {
                 Product
               </h3>
               <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="#how-it-works"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    How it works
+                  </a>
+                </li>
                 <li>
                   <a 
                     href="#why-sleepercells"
@@ -741,33 +752,21 @@ export default function App() {
                     Pricing
                   </a>
                 </li>
-              </ul>
-            </div>
-            
-            {/* Column 3: Company */}
-            <div>
-              <h3 
-                className="mb-4"
-                style={{ color: colors.textPrimary, fontSize: '0.95rem' }}
-              >
-                Company
-              </h3>
-              <ul className="space-y-2">
                 <li>
                   <a 
-                    href="#"
+                    href="#faq"
                     className="transition-colors"
                     style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
                     onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
                   >
-                    About
+                    FAQa
                   </a>
                 </li>
               </ul>
             </div>
             
-            {/* Column 4: Legal */}
+            {/* Column 3: Legal */}
             <div>
               <h3 
                 className="mb-4"

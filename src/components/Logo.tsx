@@ -9,7 +9,7 @@ export function Logo({ size = 'default' }: LogoProps) {
   const fontWeight = 600;
   
   return (
-    <div className="flex items-center">
+    <div className="flex items-center" style={{ fontSize: 0 }}>
       {/* "sleeper" in white */}
       <span 
         className={textSize}
