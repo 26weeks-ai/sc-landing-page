@@ -17,8 +17,8 @@ import {
 export default function App() {
   const platforms = ['Facebook', 'Reddit', 'Instagram', 'LinkedIn', 'Internet'];
   const navLinks = [
+    { label: 'Features', href: '#why-sleepercells' },
     { label: 'How it works', href: '#how-it-works' },
-    { label: 'Why Sleepercells', href: '#why-sleepercells' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
   ];
@@ -195,115 +195,12 @@ export default function App() {
             </div>
           </div>
         </section>
-        {/* How It Works Section */}
-        <section id="how-it-works" className="py-20 px-6 relative" aria-labelledby="how-it-works-title">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 id="how-it-works-title" className="mb-4" style={{ color: colors.textPrimary }}>
-                How it works
-              </h2>
-              <p 
-                className="max-w-2xl mx-auto"
-                style={{ color: colors.textSecondary, fontSize: '1.125rem' }}
-              >
-                From zero to always-on attention in a few simple steps.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Step 1 */}
-              <div className="text-center">
-                <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                  style={{ 
-                    background: secondaryGradient,
-                  }}
-                >
-                  <Target className="w-8 h-8" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 
-                  className="mb-3"
-                  style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
-                >
-                  Tell us about your product
-                </h3>
-                <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
-                  You give us your website, key messaging and guardrails. Sleepercells learns how to talk about your product.
-                </p>
-              </div>
-
-              {/* Step 2 */}
-              <div className="text-center">
-                <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientVia})`,
-                  }}
-                >
-                  <Settings className="w-8 h-8" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 
-                  className="mb-3"
-                  style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
-                >
-                  Choose where attention should grow
-                </h3>
-                <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
-                  Pick the platforms and communities you care about most—for example, specific subreddits or audience segments.
-                </p>
-              </div>
-
-            {/* Step 3 */}
-            <div className="text-center">
-              <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                style={{ 
-                  background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
-                }}
-              >
-                <Users className="w-8 h-8" style={{ color: colors.textPrimary }} />
-              </div>
-              <h3 
-                className="mb-3"
-                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
-              >
-                We activate autonomous brand agents
-              </h3>
-              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
-                Our AI-assisted agents start joining relevant conversations, answering questions and mentioning your product where it fits naturally.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="text-center">
-              <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                style={{ 
-                  background: secondaryGradient,
-                }}
-              >
-                <FileText className="w-8 h-8" style={{ color: colors.textPrimary }} />
-              </div>
-              <h3 
-                className="mb-3"
-                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
-              >
-                Get simple, transparent summaries
-              </h3>
-              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
-                We send you lightweight summaries with examples of where your brand showed up and how people responded.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
         {/* Why Teams Use Sleepercells Section */}
         <section id="why-sleepercells" className="py-20 px-6 relative" aria-labelledby="why-sleepercells-title">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 id="why-sleepercells-title" className="mb-4" style={{ color: colors.textPrimary }}>
-                Why Sleepercells
+                Features
               </h2>
               <p 
                 className="max-w-2xl mx-auto"
@@ -460,6 +357,109 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-20 px-6 relative" aria-labelledby="how-it-works-title">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 id="how-it-works-title" className="mb-4" style={{ color: colors.textPrimary }}>
+                How it works
+              </h2>
+              <p 
+                className="max-w-2xl mx-auto"
+                style={{ color: colors.textSecondary, fontSize: '1.125rem' }}
+              >
+                From static ads to a living attention network in four simple steps.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Step 1 */}
+              <div className="text-center">
+                <div 
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  style={{ 
+                    background: secondaryGradient,
+                  }}
+                >
+                  <Target className="w-8 h-8" style={{ color: colors.textPrimary }} />
+                </div>
+                <h3 
+                  className="mb-3"
+                  style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+                >
+                  Tell us about your product
+                </h3>
+                <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                  You give us your website, key messaging, and guardrails. Sleepercells learns your voice, value props, and “do-not-say” lines so every agent talks like someone who actually understands your product.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="text-center">
+                <div 
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientVia})`,
+                  }}
+                >
+                  <Settings className="w-8 h-8" style={{ color: colors.textPrimary }} />
+                </div>
+                <h3 
+                  className="mb-3"
+                  style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+                >
+                  Choose where attention should grow
+                </h3>
+                <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                  Select the communities that matter most—whether that’s focused subreddits, specialist forums, or major social platforms. You define the attention graph, and Sleepercells lights up those nodes first.
+                </p>
+              </div>
+
+            {/* Step 3 */}
+            <div className="text-center">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
+                }}
+              >
+                <Users className="w-8 h-8" style={{ color: colors.textPrimary }} />
+              </div>
+              <h3 
+                className="mb-3"
+                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+              >
+                We activate autonomous brand agents
+              </h3>
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                Our brand agents start joining relevant conversations, answering questions, and seeding UGC-style posts that mention your product only where it’s contextually useful—never as copy-paste spam.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="text-center">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{ 
+                  background: secondaryGradient,
+                }}
+              >
+                <FileText className="w-8 h-8" style={{ color: colors.textPrimary }} />
+              </div>
+              <h3 
+                className="mb-3"
+                style={{ color: colors.textPrimary, fontSize: '1.1rem' }}
+              >
+                Get simple, transparent summaries
+              </h3>
+              <p style={{ color: colors.textSecondary, fontSize: '0.95rem' }}>
+                You receive lightweight summaries showing where your brand appeared, what was said, and how people responded, so you can quickly refine guardrails, targeting, and the next wave of attention.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
         {/* Pricing Section */}
         <section id="pricing" className="py-20 px-6 relative" aria-labelledby="pricing-title">
@@ -721,6 +721,17 @@ export default function App() {
               <ul className="space-y-2">
                 <li>
                   <a 
+                    href="#why-sleepercells"
+                    className="transition-colors"
+                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
+                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
+                  >
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a 
                     href="#how-it-works"
                     className="transition-colors"
                     style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
@@ -728,17 +739,6 @@ export default function App() {
                     onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
                   >
                     How it works
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="#why-sleepercells"
-                    className="transition-colors"
-                    style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
-                    onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
-                  >
-                    Why Sleepercells
                   </a>
                 </li>
                 <li>
