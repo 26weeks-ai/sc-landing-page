@@ -9,7 +9,7 @@ export function Logo({ size = 'default' }: LogoProps) {
   const fontWeight = 600;
   
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center">
       {/* "sleeper" in white */}
       <span 
         className={textSize}
@@ -43,8 +43,7 @@ export function Logo({ size = 'default' }: LogoProps) {
         style={{ 
           fontWeight: 400,
           color: 'rgba(255, 255, 255, 0.7)',
-          letterSpacing: '0.02em',
-          marginLeft: '0.15em',
+          letterSpacing: '-0.01em',
         }}
       >
         .ai
