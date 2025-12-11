@@ -24,24 +24,34 @@ export default function App() {
   ];
   const faqs = [
     {
-      question: 'How do Sleepercells brand ambassadors work?',
+      question: 'How do Sleepercells brand agents work?',
       answer:
-        'Sleepercells activates AI brand ambassadors that join live conversations, answer questions, and seed user-style posts in the communities you select.',
+        'Sleepercells activates AI brand agents that join relevant conversations in the communities you select. They answer questions, share product experience, and seed user-style posts that look and feel like real conversations—not banner ads or generic promos.',
     },
     {
       question: 'Which platforms do you support today?',
       answer:
-        'Reddit coverage is available now with targeted subreddit focus. Support for Instagram, Facebook, LinkedIn, and more is expanding next.',
+        'Right now we focus on deep, targeted coverage in Reddit communities. Support for other platforms such as Instagram, Facebook and LinkedIn is in active development. If you have a specific channel in mind, talk to us and we’ll share what’s possible today and what’s on the roadmap.',
     },
     {
       question: 'How do you keep messaging on-brand and compliant?',
       answer:
-        'You set guardrails, approved sources, and voice guidelines. Every agent uses them to stay accurate, with optional human review before posting.',
+        'You define the rules. We use your website, approved sources, value props, “do-not-say” lists and tone-of-voice guidelines as guardrails. Every brand agent is constrained by those guardrails, so mentions stay on-brand and aligned with your legal and compliance requirements.',
     },
     {
-      question: 'Can I review activity before or after it goes live?',
+      question: 'Can I review or override what agents post?',
       answer:
-        'Yes. Enable human review before posting and get transparent summaries of every mention, reply, and conversation triggered by your brand.',
+        'Yes. You can choose how hands-on you want to be:\n• Before posting: enable human review so suggested replies and posts are queued for your approval or edits before they’re published into communities.\n• After posting: get transparent summaries with links to every thread where agents mentioned your brand, so you can spot-check and refine guardrails over time.',
+    },
+    {
+      question: 'Is this spammy or against community rules?',
+      answer:
+        'No. Sleepercells is designed for low-frequency, high-relevance participation. Agents only join conversations where your product is contextually useful, and they follow platform and community guidelines. The goal is to add value to real discussions, not flood threads with repetitive promos.',
+    },
+    {
+      question: 'How do you measure impact if there are no clicks?',
+      answer:
+        'We focus on attention and presence, not click-through rates. You’ll see how often and where your brand is mentioned, which communities and threads are talking about you, and the themes, questions and sentiment that keep coming up. This shows how awareness is compounding over time, even without a traditional ad funnel.',
     },
   ];
 
@@ -176,10 +186,6 @@ export default function App() {
                     Book demo
                   </a>
                 </div>
-                
-                <p style={{ color: colors.textSecondary, fontSize: '0.875rem' }}>
-                  No credit card required · Get started in minutes
-                </p>
               </div>
 
               {/* RIGHT: Dashboard Mock */}
