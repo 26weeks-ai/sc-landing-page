@@ -5,13 +5,11 @@ import { Logo } from './components/Logo';
 import { colors, secondaryGradient, cardBackground, cardBorder } from './styles/colors';
 import { 
   MessageCircle,
-  Brain,
   Shield,
   Users,
   Target,
   Settings,
   FileText,
-  Zap,
   Check,
   TrendingUp,
 } from 'lucide-react';
@@ -19,9 +17,8 @@ import {
 export default function App() {
   const platforms = ['Facebook', 'Reddit', 'Instagram', 'LinkedIn', 'Internet'];
   const navLinks = [
-    { label: 'Features', href: '#features' },
     { label: 'How it works', href: '#how-it-works' },
-    { label: 'Impact', href: '#impact' },
+    { label: 'Why Sleepercells', href: '#why-sleepercells' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
   ];
@@ -192,164 +189,6 @@ export default function App() {
             </div>
           </div>
         </section>
-
-        {/* Features Section */}
-        <section id="features" className="py-20 px-6 relative" aria-labelledby="features-title">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 id="features-title" className="mb-4" style={{ color: colors.textPrimary }}>
-                Features
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Feature 1 */}
-              <div 
-                className="p-8 rounded-2xl border transition-all"
-                style={{ 
-                  background: cardBackground,
-                  borderColor: cardBorder,
-                }}
-              >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientVia})`,
-                  }}
-                >
-                  <MessageCircle className="w-6 h-6" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  On-demand UGC generation
-                </h3>
-                <p style={{ color: colors.textSecondary }}>
-                  Get the authenticity of user-generated content with the control and targeting of a paid service.
-                </p>
-              </div>
-
-              {/* Feature 2 */}
-              <div 
-                className="p-8 rounded-2xl border transition-all"
-                style={{ 
-                  background: cardBackground,
-                  borderColor: cardBorder,
-                }}
-              >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ 
-                    background: secondaryGradient,
-                  }}
-                >
-                  <Shield className="w-6 h-6" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Built-in brand guardrails
-                </h3>
-                <p style={{ color: colors.textSecondary }}>
-                  Set boundaries on what your AI agents can say, ensuring they stay on-brand and compliant with your guidelines.
-                </p>
-              </div>
-
-              {/* Feature 3 */}
-              <div 
-                className="p-8 rounded-2xl border transition-all"
-                style={{ 
-                  background: cardBackground,
-                  borderColor: cardBorder,
-                }}
-              >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
-                  }}
-                >
-                  <Users className="w-6 h-6" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Optional human review
-                </h3>
-                <p style={{ color: colors.textSecondary }}>
-                  Optional approval workflows let you review and approve content before it goes live in communities.
-                </p>
-              </div>
-
-              {/* Feature 4 */}
-              <div 
-                className="p-8 rounded-2xl border transition-all"
-                style={{ 
-                  background: cardBackground,
-                  borderColor: cardBorder,
-                }}
-              >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ 
-                    background: secondaryGradient,
-                  }}
-                >
-                  <Zap className="w-6 h-6" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Designed for every platform
-                </h3>
-                <p style={{ color: colors.textSecondary }}>
-                  Start with Reddit today. Expand to Instagram, Facebook, LinkedIn and more as we roll out new integrations.
-                </p>
-              </div>
-
-              {/* Feature 5 */}
-              <div 
-                className="p-8 rounded-2xl border transition-all"
-                style={{ 
-                  background: cardBackground,
-                  borderColor: cardBorder,
-                }}
-              >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientTo})`,
-                  }}
-                >
-                  <Target className="w-6 h-6" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Autonomous from day one
-                </h3>
-                <p style={{ color: colors.textSecondary }}>
-                  Once set up, our agents run autonomously. You just review summaries and watch attention grow.
-                </p>
-              </div>
-
-              {/* Feature 6 */}
-              <div 
-                className="p-8 rounded-2xl border transition-all"
-                style={{ 
-                  background: cardBackground,
-                  borderColor: cardBorder,
-                }}
-              >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
-                  }}
-                >
-                  <Brain className="w-6 h-6" style={{ color: colors.textPrimary }} />
-                </div>
-                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Context-aware AI
-                </h3>
-                <p style={{ color: colors.textSecondary }}>
-                  Our AI agents use your website, docs and guardrails to talk like someone who actually knows your product.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* How It Works Section */}
         <section id="how-it-works" className="py-20 px-6 relative" aria-labelledby="how-it-works-title">
           <div className="max-w-7xl mx-auto">
@@ -453,25 +292,25 @@ export default function App() {
         </div>
       </section>
 
-        {/* Impact Section */}
-        <section id="impact" className="py-20 px-6 relative" aria-labelledby="impact-title">
+        {/* Why Teams Use Sleepercells Section */}
+        <section id="why-sleepercells" className="py-20 px-6 relative" aria-labelledby="why-sleepercells-title">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 id="impact-title" className="mb-4" style={{ color: colors.textPrimary }}>
-                Impact
+              <h2 id="why-sleepercells-title" className="mb-4" style={{ color: colors.textPrimary }}>
+                Why Sleepercells
               </h2>
               <p 
                 className="max-w-2xl mx-auto"
                 style={{ color: colors.textSecondary, fontSize: '1.125rem' }}
               >
-                What happens when your product is being talked about every day, in the right places.
+                A quick view of what autonomous attention adds to your brand.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Impact Card 1 */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Card 1 */}
               <div 
-                className="p-8 rounded-2xl border"
+                className="p-8 rounded-2xl border transition-all"
                 style={{ 
                   background: cardBackground,
                   borderColor: cardBorder,
@@ -480,22 +319,22 @@ export default function App() {
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
                   style={{ 
-                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}40, ${colors.brandGradientVia}40)`,
+                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientVia})`,
                   }}
                 >
-                  <MessageCircle className="w-6 h-6" style={{ color: colors.brandGradientFrom }} />
+                  <MessageCircle className="w-6 h-6" style={{ color: colors.textPrimary }} />
                 </div>
                 <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Your brand enters real conversations
+                  On-demand UGC generation
                 </h3>
                 <p style={{ color: colors.textSecondary }}>
-                  We seed user-style posts, replies and Q&As in relevant communities, so your product shows up where your buyers already hang out.
+                  Get the authenticity of user-generated conversations with the control of an attention engine you configure. Our brand agents speak in natural posts, replies and Q&amp;As instead of reading like scripted ads.
                 </p>
               </div>
 
-              {/* Impact Card 2 */}
+              {/* Card 2 */}
               <div 
-                className="p-8 rounded-2xl border"
+                className="p-8 rounded-2xl border transition-all"
                 style={{ 
                   background: cardBackground,
                   borderColor: cardBorder,
@@ -504,69 +343,117 @@ export default function App() {
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
                   style={{ 
-                    background: `${colors.secondaryGradientFrom}40`,
+                    background: secondaryGradient,
                   }}
                 >
-                  <Brain className="w-6 h-6" style={{ color: colors.secondaryGradientFrom }} />
+                  <Shield className="w-6 h-6" style={{ color: colors.textPrimary }} />
                 </div>
                 <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                  Every mention is on-brand
+                  Built-in brand guardrails
                 </h3>
                 <p style={{ color: colors.textSecondary }}>
-                  Our AI agents use your website, docs and guardrails to talk like someone who actually knows your product.
+                  Set clear boundaries on what your AI agents can say, so every mention stays on-brand and compliant with your guidelines across communities and platforms.
                 </p>
               </div>
 
-            {/* Impact Card 3 */}
-            <div 
-              className="p-8 rounded-2xl border"
-              style={{ 
-                background: cardBackground,
-                borderColor: cardBorder,
-              }}
-            >
+              {/* Card 3 */}
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                className="p-8 rounded-2xl border transition-all"
                 style={{ 
-                  background: `${colors.brandGradientTo}40`,
+                  background: cardBackground,
+                  borderColor: cardBorder,
                 }}
               >
-                <TrendingUp className="w-6 h-6" style={{ color: colors.brandGradientTo }} />
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
+                  }}
+                >
+                  <Users className="w-6 h-6" style={{ color: colors.textPrimary }} />
+                </div>
+                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                  Human review when it matters
+                </h3>
+                <p style={{ color: colors.textSecondary }}>
+                  For sensitive topics or high-stakes threads, you can review and approve suggested replies before they&apos;re posted into real communities or social feeds.
+                </p>
               </div>
-              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                Attention grows steadily over time
-              </h3>
-              <p style={{ color: colors.textSecondary }}>
-                Instead of a single ad blast, sleepercells keeps a steady stream of conversations going over weeks and months.
-              </p>
-            </div>
 
-            {/* Impact Card 4 */}
-            <div 
-              className="p-8 rounded-2xl border"
-              style={{ 
-                background: cardBackground,
-                borderColor: cardBorder,
-              }}
-            >
+              {/* Card 4 */}
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                className="p-8 rounded-2xl border transition-all"
                 style={{ 
-                  background: `${colors.brandGradientVia}40`,
+                  background: cardBackground,
+                  borderColor: cardBorder,
                 }}
               >
-                <FileText className="w-6 h-6" style={{ color: colors.brandGradientVia }} />
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                  style={{ 
+                    background: secondaryGradient,
+                  }}
+                >
+                  <Target className="w-6 h-6" style={{ color: colors.textPrimary }} />
+                </div>
+                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                  Autonomous from day one
+                </h3>
+                <p style={{ color: colors.textSecondary }}>
+                  Connect your website, key messaging and guardrails once, and Sleepercells starts running on its own. Brand agents work in the background while you simply review summaries and adjust direction when needed.
+                </p>
               </div>
-              <h3 className="mb-3" style={{ color: colors.textPrimary }}>
-                Clear visibility into what&apos;s happening
-              </h3>
-              <p style={{ color: colors.textSecondary }}>
-                See which threads and communities mentioned your brand, and what people are saying—without obsessing over click-through rates.
-              </p>
+
+              {/* Card 5 */}
+              <div 
+                className="p-8 rounded-2xl border transition-all"
+                style={{ 
+                  background: cardBackground,
+                  borderColor: cardBorder,
+                }}
+              >
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${colors.brandGradientFrom}, ${colors.brandGradientTo})`,
+                  }}
+                >
+                  <TrendingUp className="w-6 h-6" style={{ color: colors.textPrimary }} />
+                </div>
+                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                  Attention grows steadily over time
+                </h3>
+                <p style={{ color: colors.textSecondary }}>
+                  Instead of short-lived ad spikes, your autonomous attention engine keeps a steady stream of natural conversations going over weeks and months, so awareness compounds instead of fading overnight.
+                </p>
+              </div>
+
+              {/* Card 6 */}
+              <div 
+                className="p-8 rounded-2xl border transition-all"
+                style={{ 
+                  background: cardBackground,
+                  borderColor: cardBorder,
+                }}
+              >
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${colors.brandGradientVia}, ${colors.brandGradientTo})`,
+                  }}
+                >
+                  <FileText className="w-6 h-6" style={{ color: colors.textPrimary }} />
+                </div>
+                <h3 className="mb-3" style={{ color: colors.textPrimary }}>
+                  Clear visibility into what&apos;s happening
+                </h3>
+                <p style={{ color: colors.textSecondary }}>
+                  Even though it&apos;s 0-click, you still see where your brand shows up. Get lightweight summaries of which threads and communities mentioned you, what people are saying and how sentiment is shifting over time.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Pricing Section */}
         <section id="pricing" className="py-20 px-6 relative" aria-labelledby="pricing-title">
@@ -828,18 +715,18 @@ export default function App() {
               <ul className="space-y-2">
                 <li>
                   <a 
-                    href="#"
+                    href="#why-sleepercells"
                     className="transition-colors"
                     style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
                     onMouseLeave={(e) => e.currentTarget.style.color = colors.textSecondary}
                   >
-                    Features
+                    Why Sleepercells
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="#"
+                    href="#pricing"
                     className="transition-colors"
                     style={{ color: colors.textSecondary, fontSize: '0.9rem' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = colors.brandGradientFrom}
