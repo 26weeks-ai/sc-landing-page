@@ -1,0 +1,181 @@
+:root {
+  --background-main: #050816;
+  --background-hero-gradient-from: #0a0e2a;
+  --background-hero-gradient-to: #170e39;
+  --text-primary: #ffffff;
+  --text-secondary: #8d9ab0;
+  --brand-gradient-from: #22d3ee;
+  --brand-gradient-via: #60a5fa;
+  --brand-gradient-to: #a855f7;
+  --secondary-gradient-from: #4d66f1;
+  --secondary-gradient-to: #7e86f6;
+  --card-background: rgba(15, 23, 42, 0.72);
+  --card-border: rgba(148, 163, 184, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(900px 600px at 20% 0%, rgba(34, 211, 238, 0.12), transparent 60%),
+    radial-gradient(900px 600px at 80% 10%, rgba(168, 85, 247, 0.10), transparent 60%),
+    linear-gradient(135deg, var(--background-hero-gradient-from), var(--background-hero-gradient-to));
+  color: var(--text-primary);
+  font-family: Satoshi, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand-gradient-from);
+}
+
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: rgba(32, 35, 48, 0.75);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 1.05rem;
+}
+
+.logo .brand {
+  background: linear-gradient(90deg, var(--brand-gradient-from), var(--brand-gradient-via), var(--brand-gradient-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.55);
+  color: rgba(141, 154, 176, 0.95);
+  font-size: 0.9rem;
+}
+
+.card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  margin: 1rem 0 0.5rem;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.meta {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.content {
+  margin-top: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.content h2 {
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.content ul {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.content li {
+  margin: 0.25rem 0;
+}
+
+.footer {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  margin-top: 2.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.55);
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(148, 163, 184, 0.36);
+  background: rgba(15, 23, 42, 0.75);
+  color: var(--text-primary);
+}
+
+.btn-primary {
+  border: 0;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--secondary-gradient-from), var(--secondary-gradient-to));
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(77, 102, 241, 0.95), rgba(126, 134, 246, 0.95));
+}

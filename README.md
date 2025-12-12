@@ -1,7 +1,7 @@
 
-  # Create Landing Page
+  # sleepercells.ai landing page
 
-  This is a code bundle for Create Landing Page. The original project is available at https://www.figma.com/design/xdWaqNzJeVhLbU5uegihGM/Create-Landing-Page.
+  This repo contains the sleepercells.ai landing page. The original design source is available at https://www.figma.com/design/xdWaqNzJeVhLbU5uegihGM/Create-Landing-Page.
 
   ## Running the code
 

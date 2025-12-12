@@ -1427,3 +1427,288 @@ a {
   syntax: "*";
   inherits: false
 }
+
+/* Sleepercells landing page polish */
+:root {
+  --card-background: rgba(15, 23, 42, 0.6);
+  --card-background-strong: rgba(15, 23, 42, 0.78);
+  --card-border: rgba(148, 163, 184, 0.25);
+  --card-border-strong: rgba(148, 163, 184, 0.38);
+  --shadow-primary: 0 16px 60px rgba(77, 102, 241, 0.28);
+  --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sc-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.sc-anchor {
+  scroll-margin-top: 96px;
+}
+
+.sc-focus:focus-visible {
+  outline: 2px solid rgba(96, 165, 250, 0.7);
+  outline-offset: 3px;
+}
+
+.sc-nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sc-nav-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (width >= 64rem) {
+  .sc-nav-desktop {
+    display: flex;
+  }
+
+  .sc-nav-mobile {
+    display: none;
+  }
+}
+
+.sc-nav-link {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 140ms ease;
+}
+
+.sc-nav-link:hover {
+  color: var(--text-primary);
+}
+
+.sc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, border-color 150ms ease, opacity 150ms ease;
+  will-change: transform;
+}
+
+.sc-btn:active {
+  transform: translateY(0);
+}
+
+.sc-btn-primary {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--secondary-gradient-from), var(--secondary-gradient-to));
+  box-shadow: 0 12px 40px rgba(77, 102, 241, 0.22);
+}
+
+.sc-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-primary);
+}
+
+.sc-btn-secondary {
+  color: var(--text-primary);
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid var(--card-border);
+}
+
+.sc-btn-secondary:hover {
+  background: var(--card-background-strong);
+  border-color: var(--card-border-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.sc-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: rgba(15, 23, 42, 0.55);
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.sc-icon-btn:hover {
+  background: var(--card-background-strong);
+  border-color: var(--card-border-strong);
+  transform: translateY(-1px);
+}
+
+.sc-card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  transition: transform 170ms ease, border-color 170ms ease, background 170ms ease, box-shadow 170ms ease;
+}
+
+.sc-card:hover {
+  background: var(--card-background-strong);
+  border-color: var(--card-border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.32);
+}
+
+.sc-card-featured {
+  border-color: rgba(77, 102, 241, 0.7);
+  box-shadow: 0 0 0 1px rgba(77, 102, 241, 0.15), 0 24px 80px rgba(77, 102, 241, 0.14);
+}
+
+.sc-card-featured:hover {
+  border-color: rgba(126, 134, 246, 0.85);
+  box-shadow: 0 0 0 1px rgba(77, 102, 241, 0.2), 0 30px 100px rgba(77, 102, 241, 0.18);
+}
+
+.sc-accordion-item {
+  border-radius: 1.25rem;
+}
+
+.sc-accordion-item + .sc-accordion-item {
+  margin-top: 0.75rem;
+}
+
+.sc-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sc-accordion-chevron {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: rgba(141, 154, 176, 0.95);
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.sc-accordion-item[data-open="true"] .sc-accordion-chevron {
+  transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sc-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 240ms ease, opacity 200ms ease;
+}
+
+.sc-accordion-item[data-open="true"] .sc-accordion-content {
+  max-height: 560px;
+  opacity: 1;
+}
+
+.sc-accordion-content-inner {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+}
+
+.sc-section {
+  padding: 5rem 0;
+}
+
+.sc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.55);
+  color: rgba(141, 154, 176, 0.95);
+  font-size: 0.9rem;
+}
+
+.sc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sc-badge-primary {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--secondary-gradient-from), var(--secondary-gradient-to));
+}
+
+.sc-badge-muted {
+  color: rgba(96, 165, 250, 0.95);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: rgba(96, 165, 250, 0.12);
+}
+
+.sc-section-header {
+  max-width: 44rem;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.sc-lead {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.sc-footer-link {
+  color: var(--text-secondary);
+  transition: color 140ms ease;
+}
+
+.sc-footer-link:hover {
+  color: var(--brand-gradient-from);
+}
+
+.sc-mobile-overlay {
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(10px);
+}
+
+.sc-mobile-panel {
+  width: min(420px, 100%);
+  height: 100%;
+  margin-left: auto;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.92);
+  border-left: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.sc-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (width >= 64rem) {
+  .sc-cta-actions-end-lg {
+    justify-content: flex-end;
+  }
+}

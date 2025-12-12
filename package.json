@@ -1,6 +1,7 @@
 
   {
-      "name": "Create Landing Page",
+      "name": "sleepercells-ai-landing-page",
+      "description": "sleepercells.ai landing page",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
