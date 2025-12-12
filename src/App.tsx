@@ -198,7 +198,7 @@ export default function App() {
         {/* Hero Section */}
         <section 
           id="hero"
-          className="sc-anchor relative pt-32 pb-20 px-6 overflow-hidden"
+          className="sc-anchor sc-hero relative pt-32 pb-20 px-6 overflow-hidden"
           style={{
             background: `linear-gradient(135deg, ${colors.backgroundHeroGradientFrom}, ${colors.backgroundHeroGradientTo})`,
           }}

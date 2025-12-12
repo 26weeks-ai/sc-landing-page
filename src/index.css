@@ -1625,6 +1625,25 @@ html {
   padding: 0 1.5rem 1.25rem 1.5rem;
 }
 
+.sc-hero {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+@media (width >= 64rem) {
+  .sc-hero {
+    min-height: 86vh;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .sc-hero > .sc-container {
+    width: 100%;
+  }
+}
+
 .sc-section {
   padding: 5rem 0;
 }
